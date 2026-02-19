@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary Settings</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #111111;
+        --muted: #555555;
+        --line: #111111;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+          sans-serif;
+      }
+
+      .wrap {
+        max-width: 760px;
+        margin: 28px auto;
+        padding: 0 16px 24px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .head {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .content {
+        padding: 14px 16px 16px;
+      }
+
+      .hint {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 340px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+        resize: vertical;
+        font-size: 13px;
+        line-height: 1.5;
+        background: #fff;
+        color: #111;
+      }
+
+      .actions {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      button {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: #111;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+
+      #status {
+        font-size: 12px;
+        color: #222;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <div class="head">Custom Dictionary (JSON)</div>
+        <div class="content">
+          <p class="hint">
+            Enter a JSON object. Example: {"hello":"greeting","API":"Application Programming Interface"}
+          </p>
+          <textarea id="dictInput" spellcheck="false"></textarea>
+          <div class="actions">
+            <button id="saveBtn">Save</button>
+            <button id="importBtn">Import JSON</button>
+            <button id="exportBtn">Export JSON</button>
+            <input id="importFile" type="file" accept=".json,application/json" hidden />
+            <span id="status"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

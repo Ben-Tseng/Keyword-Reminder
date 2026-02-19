@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyword Reminder</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #111111;
+        --line: #111111;
+        --muted: #606060;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        width: 360px;
+        background: var(--bg);
+        color: var(--fg);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+          sans-serif;
+      }
+
+      .wrap {
+        padding: 14px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .head {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .content {
+        padding: 12px;
+      }
+
+      label {
+        display: block;
+        font-size: 12px;
+        color: #2c2c2c;
+        margin: 0 0 6px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 9px 10px;
+        font-size: 13px;
+        color: var(--fg);
+        background: #fff;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        min-height: 70px;
+        resize: vertical;
+      }
+
+      button {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--fg);
+        font-size: 12px;
+        padding: 7px 12px;
+        cursor: pointer;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .status {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .list {
+        margin-top: 12px;
+        border-top: 1px solid #d9d9d9;
+        padding-top: 12px;
+        display: grid;
+        gap: 8px;
+        max-height: 220px;
+        overflow: auto;
+      }
+
+      .item {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 9px 10px;
+      }
+
+      .item-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+
+      .item-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .item-key {
+        font-size: 12px;
+        font-weight: 600;
+        word-break: break-word;
+      }
+
+      .item-value {
+        font-size: 12px;
+        color: #2a2a2a;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .section-title {
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid #d9d9d9;
+      }
+
+      .check-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 2px 0 10px;
+      }
+
+      .check-row input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+      }
+
+      .check-row label {
+        margin: 0;
+        font-size: 12px;
+        color: #1f1f1f;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <div class="head">Keyword Dictionary</div>
+        <div class="content">
+          <label for="keyInput">Keyword</label>
+          <input id="keyInput" type="text" placeholder="e.g. API / compliance" />
+
+          <label for="valueInput">Reminder Text</label>
+          <textarea id="valueInput" placeholder="Enter explanation or reminder"></textarea>
+
+          <div class="actions">
+            <button id="saveBtn">Save</button>
+            <button id="cancelEditBtn" style="display: none">Cancel Edit</button>
+            <span id="status" class="status"></span>
+          </div>
+
+          <label for="searchInput">Search</label>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search by keyword or reminder text"
+          />
+
+          <div class="section-title">
+            <div class="check-row">
+              <input id="autoDetectCheckbox" type="checkbox" />
+              <label for="autoDetectCheckbox">Auto-detect selected text</label>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <label for="defaultOutputInput">Default text for unmatched selection</label>
+            <textarea
+              id="defaultOutputInput"
+              placeholder="e.g. No keyword matched. Please contact your admin."
+            ></textarea>
+            <div class="actions">
+              <button id="saveDefaultBtn">Save Default Text</button>
+            </div>
+          </div>
+
+          <div id="list" class="list"></div>
+        </div>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

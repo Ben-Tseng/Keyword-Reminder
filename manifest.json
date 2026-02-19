@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Keyword Reminder",
+  "version": "1.0.0",
+  "description": "Select text and show dictionary matches from your custom JSON dictionary.",
+  "permissions": ["storage", "contextMenus", "scripting", "activeTab"],
+  "icons": {
+    "16": "128.png",
+    "32": "128.png",
+    "48": "128.png",
+    "128": "128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "128.png",
+      "32": "128.png"
+    }
+  },
+  "options_page": "options.html"
+}
