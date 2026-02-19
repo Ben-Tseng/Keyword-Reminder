@@ -1,0 +1,46 @@
+Effective date: February 19, 2026
+
+Keyword Reminder (“the Extension”) is designed to provide keyword-based reminders when users select text on web pages.
+
+1. Data Collection
+The Extension does not collect, transmit, sell, or share personal data with any third party.
+
+2. Data Storage
+The Extension stores the following data locally in your browser using chrome.storage.local:
+
+User-defined keyword entries (keyword -> reminder text)
+Default reminder content for unmatched selections
+Feature settings (such as auto-detection on/off)
+This data remains on your device and is not uploaded to external servers.
+
+3. Website Access
+The Extension runs on web pages to:
+
+Read user-selected text (only after user selection)
+Match selected text against locally stored keywords
+Display reminder popups
+The Extension does not track browsing history, keystrokes, or page content beyond what is required for this feature.
+
+4. Permissions Use
+storage: Save user settings and keyword entries locally
+contextMenus: Provide right-click menu trigger
+scripting and host permissions: Inject and run reminder UI logic on pages where the user triggers the feature
+5. Data Sharing
+No user data is sold, rented, or shared with advertisers, analytics providers, or third parties.
+
+6. Data Retention and Deletion
+All data is controlled by the user and stored locally.
+Users can delete data by:
+
+Removing entries in the Extension UI
+Uninstalling the Extension
+Clearing browser extension storage
+7. Children’s Privacy
+The Extension is not specifically directed to children and does not knowingly collect personal information from children.
+
+8. Changes to This Policy
+We may update this Privacy Policy to reflect feature or compliance changes. Updates will be reflected by revising the effective date.
+
+9. Contact
+If you have questions about this Privacy Policy, please contact:
+bentseng06@gmail.com
