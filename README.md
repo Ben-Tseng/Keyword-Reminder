@@ -1,5 +1,7 @@
 # Keyword Reminder (Chrome Extension)
 
+Demo:https://github.com/Ben-Tseng/Keyword-Reminder/blob/main/Demo_Keyword_Reminder.gif
+
 ## Features
 - Click the extension icon to add `keyword -> reminder text` entries.
 - Search entries in the popup and edit keyword or reminder text quickly.
